@@ -1,13 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import MakeUpList from "./MakeUpList";
+import Navbar from "./Navbar";
+import Products from "./Products";
+import Home from "./Home";
+import Brands from "./Brands";
+import Reviews from "./Reviews";
 
 function App() {
+let Component
+switch (window.location.pathname) {
+  case "/":
+    Component = <App/>
+    break
+    case "/home":
+      Component = <Home/>
+      break 
+      case "/products":
+        Component = <Products/>
+        break 
+        case "/brands":
+          Component = <Brands/>
+          break 
+          case "/reviews":
+            Component = <Reviews/>
+            break
+
+
+}
+
+
+
   return (
+
+    
     <div className="App">
+        <Navbar/>
+{Component}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="" className="" alt="" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+         FaceCake
         </p>
         <a
           className="App-link"
@@ -15,9 +48,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+        
         </a>
       </header>
+<MakeUpList/>
+      
     </div>
   );
 }
