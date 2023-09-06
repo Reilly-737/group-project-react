@@ -1,31 +1,20 @@
 import React from "react";
 import "./MakeUpCard.css";
 
-function MakeUpCard({ image_link, name, brand, price, rating, description }) {
-  const showPlaceholder = !image_link;
-  const placeholderImageUrl = "https://static.vecteezy.com/system/resources/thumbnails/000/665/552/small/pixel-art-cupcakes-seamless-pattern.png";
+function MakeUpCard({ image_link, name, brand, price, rating, website }) {
+ const defaultImageUrl = "https://img.freepik.com/premium-vector/8-bit-pixel-birthday-cake-food-item-game-assets-vector-illustration_614713-1063.jpg?w=826"
+ const handleImageError = (event) => {
+  event.target.src = defaultImageUrl;
+ }
 
   return (
     <div className="makeup">
-      <div className="image-container">
-        {showPlaceholder ? (
-          <img
-            src={placeholderImageUrl}
-            alt="Placeholder"
-            className="image-error"
-          />
-        ) : (
-          <img src={image_link} alt={name} />
-        )}
-        {showPlaceholder && (
-          <div className="error-message">Image link is missing</div>
-        )}
-      </div>
-      <h4>{brand}</h4>
-      <h4>{name}</h4>
-      <h4>Price: ${price}</h4>
-      <h4>Rating: {rating}</h4>
-      <h4>Description:<p>{description}</p></h4>
+      <h2>{name}</h2>
+      <img src={image_link} alt={name} onError={handleImageError}/>
+      <p>Brand: {brand}</p>
+      <p>Price: {price}</p>
+      <a href={website} class="button-link">Product link</a>
+      <p>Rating: {rating} </p>
     </div>
   );
 }

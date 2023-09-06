@@ -1,0 +1,41 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgb(252, 198, 206); /* Background color */
+  padding: 20px;
+  border: 2px solid yellow; /* Border with yellow trim */
+}
+
+.right-content {
+  width: 30%;
+  margin-right:20px;
+
+}
+
+.left-content {
+  flex-basis: 1; /* Adjust the width as needed */
+  padding: 1rem;
+}
+.site-title {
+  font-size: 36px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the title bold */
+  display: inline-block; /* Allow centering horizontally */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+.nav {
+  text-align: center; /* Center align the content */
+}
+.home-container {
+  background: linear-gradient(to bottom, #FF69B4, #FFB6C1);
+
+}
+.site-title {
+  font-family: 'CustomFont', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}

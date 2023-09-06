@@ -9,7 +9,7 @@
 }
 
 .makeup img {
-  max-width: 100%; /* Make sure the image doesn't exceed the card's width */
+  max-width: 100%; 
 }
 
 .makeup h4 {
@@ -18,4 +18,19 @@
 
 .makeup p {
   margin: 8px 0; /* Margin for the description */
+}
+.makeup {
+  background: linear-gradient(to bottom, #FF69B4, #FFB6C1); /* Gradient background */
+  border: 2px solid yellow; /* Border with yellow trim */
+  padding: 20px;
+  margin: 10px; /* Add margin to separate cards */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow for cards */
+}
+
+/* Customize the box shadow and background for the cards on hover */
+.makeup:hover {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #FFB6C1, #FF69B4);
+  /* Adjust colors as needed */
 }

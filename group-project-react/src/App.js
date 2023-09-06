@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MakeupContainer from "./MakeupContainer";
 import Navbar from "./Navbar";
 import Home from "./Home";
+import ContactUs from "./ContactUs";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/special">
             <p>Special</p>
           </Route>
+          <Route path="/contact" component={ContactUs} />
           {/*<Route exact path="/" component={Home} />*/}
           <KeepCard />
         </Switch>
@@ -27,13 +29,12 @@ export default App;
 function KeepCard() {
   return (
     <>
-      <div className="left-content">
-        <MakeupContainer />
-      </div>
-
       <Switch>
         <Route exact path="/" component={Home}></Route>
       </Switch>
+      <div className="left-content">
+        <MakeupContainer />
+      </div>
     </>
   );
 }
