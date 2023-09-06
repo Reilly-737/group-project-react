@@ -1,39 +1,93 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    margin: 0;
-
+body {
+  background-color: #9dc2e3; 
 }
 
+/* Header background color */
+header {
+  background-color: #ffb6c1; 
+}
+
+/* CSS for pink and differently styled buttons */
+.pagination button {
+  background-color: pink; 
+  color: white; 
+  border: none; /* Remove the default button border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 8px 16px; /* Padding for the buttons */
+  margin: 4px; /* Margin to separate the buttons */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+/* Style the "Back" button */
+.pagination button:first-child {
+  background-color: #ff69b4; /* A different shade of pink */
+}
+
+/* Disable the "Back" button when not clickable */
+.pagination button:first-child:disabled {
+  background-color: #f1caca; /* Grayed out color */
+  cursor: not-allowed; /* Disable pointer cursor */
+}
+
+* {
+  box-sizing: border-box;
+}
 .nav {
-    background-color: #e0db8b;
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 0 1rem;
+  background-color: #f0f864;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+  
 }
-
 .nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap:1rem;
-
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
-
 .nav a {
-    color: inherit;
-    text-decoration: none;
-height: 100%;
-display: flex;
-align-items: center;
-padding: .25rem;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+.nav li:hover {
+  background-color: rgb(176, 241, 120);
+}
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgb(252, 198, 206); /* Background color */
+  padding: 20px;
+  border: 2px solid yellow; /* Border with yellow trim */
 }
 
-.nav li:hover {
-    background-color:rgb(133, 88, 29)
+.right-content {
+  width: 30%;
+  /* Add any other styles you want for the text content here */
+}
+
+.left-content {
+  flex-basis: 55%; /* Adjust the width as needed */
+  padding: 1rem;
+}
+.site-title {
+  font-size: 36px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the title bold */
+  display: inline-block; /* Allow centering horizontally */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+.nav {
+  text-align: center; /* Center align the content */
+}
+.home-container {
+  background: linear-gradient(to bottom, #FF69B4, #FFB6C1);
+  /* Replace colors withdesired gradient */
 }

@@ -1,0 +1,21 @@
+.makeup {
+  background-color: #e3c2c2; /* Card background color (white) */
+  border: 1px solid #ddd; /* Card border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 16px; /* Padding inside the card */
+  margin: 8px 0; /* Margin to separate cards */
+  max-width: 300px; /* Maximum width of the card */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Box shadow for the card */
+}
+
+.makeup img {
+  max-width: 100%; /* Make sure the image doesn't exceed the card's width */
+}
+
+.makeup h4 {
+  margin: 0; /* Remove margin around the headings */
+}
+
+.makeup p {
+  margin: 8px 0; /* Margin for the description */
+}
