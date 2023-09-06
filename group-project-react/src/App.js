@@ -1,58 +1,33 @@
 import React from "react";
-
-import MakeUpList from "./MakeUpList";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MakeupContainer from "./MakeupContainer";
 import Navbar from "./Navbar";
-import Products from "./Products";
 import Home from "./Home";
-import Brands from "./Brands";
-import Reviews from "./Reviews";
 
 function App() {
-let Component
-switch (window.location.pathname) {
-  case "/":
-    Component = <App/>
-    break
-    case "/home":
-      Component = <Home/>
-      break 
-      case "/products":
-        Component = <Products/>
-        break 
-        case "/brands":
-          Component = <Brands/>
-          break 
-          case "/reviews":
-            Component = <Reviews/>
-            break
-
-
-}
-
-
 
   return (
-
-    
     <div className="App">
         <Navbar/>
-{Component}
-      <header className="App-header">
+        <header className="App-header">
         <img src="" className="" alt="" />
-        <p>
-         FaceCake
-        </p>
+        <p>FaceCake</p>
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-        
-        </a>
+        ></a>
       </header>
-<MakeUpList/>
-      
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          {/* <Route path="/products" component={Products}/>
+          <Route path="/brands" component={Brands}/>
+          <Route path="/reviews" component={Reviews}/> */}
+        </Switch>
+      </Router>
+      <MakeupContainer/>
     </div>
   );
 }

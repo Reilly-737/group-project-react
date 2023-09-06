@@ -1,39 +1,61 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    margin: 0;
-
+body {
+  background-color: #9dc2e3; 
 }
 
+/* Header background color */
+header {
+  background-color: #ffb6c1; 
+}
+
+/* CSS for pink and differently styled buttons */
+.pagination button {
+  background-color: pink; 
+  color: white; 
+  border: none; /* Remove the default button border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 8px 16px; /* Padding for the buttons */
+  margin: 4px; /* Margin to separate the buttons */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+/* Style the "Back" button */
+.pagination button:first-child {
+  background-color: #ff69b4; /* A different shade of pink */
+}
+
+/* Disable the "Back" button when not clickable */
+.pagination button:first-child:disabled {
+  background-color: #ccc; /* Grayed out color */
+  cursor: not-allowed; /* Disable pointer cursor */
+}
+
+* {
+  box-sizing: border-box;
+}
 .nav {
-    background-color: #e0db8b;
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 0 1rem;
+  background-color: #f0f864;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
 }
-
 .nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap:1rem;
-
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
-
 .nav a {
-    color: inherit;
-    text-decoration: none;
-height: 100%;
-display: flex;
-align-items: center;
-padding: .25rem;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
 }
-
 .nav li:hover {
-    background-color:rgb(133, 88, 29)
+  background-color: rgb(176, 241, 120);
 }

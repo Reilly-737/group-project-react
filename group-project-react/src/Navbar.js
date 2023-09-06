@@ -11,16 +11,7 @@ function Navbar () {
 <li><a href="/products"> Products</a></li>
 <li><a href="/reviews"> Reviews</a></li>
 <li><a href="/brands"> Brands</a></li>
-
-
-
-
-
-
        </ul>
-       
-       
-       
         </nav>
     )
 }
