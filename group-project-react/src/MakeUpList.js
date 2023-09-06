@@ -17,7 +17,7 @@ function MakeUpList({ makeups, loading, error, onPageChange, currentPage, itemsP
         image_link={makeup.image_link}
         brand={makeup.brand}
         price={makeup.price}
-        description={makeup.description}
+        website={makeup.product_link}
         rating={makeup.rating}
       />
     );

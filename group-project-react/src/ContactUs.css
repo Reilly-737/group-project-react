@@ -1,0 +1,29 @@
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;/* Make the container fill the entire viewport height */
+  position: relative;
+}
+
+.text-box {
+  background: linear-gradient(45deg, #ffdb58, #ff69b4);
+  border: 2px solid yellow;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Baskerville', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.image-container {
+  margin-left: 20px; /* Add margin to separate the text and image if needed */
+  position: absolute;
+  top: 0;
+  z-index: 2; 
+  
+}
+.image-container img {
+  max-width: 350px; /* Set a maximum width for the image */
+  border: 2px solid #ff1493; /* Dark pink border */
+}
