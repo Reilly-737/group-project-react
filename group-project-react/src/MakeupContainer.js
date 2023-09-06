@@ -30,13 +30,13 @@ const onPageChange = (pageNumber) => {
 }
 
 return (
-    <MakeUpList 
-    makeups={currentMakeups} 
-    loading={loading} 
-    error={error} 
-    onPageChange={onPageChange}
-    currentPage={currentPage}
-    />
-)
+    <MakeUpList
+      makeups={currentMakeups}
+      loading={loading}
+      error={error}
+      onPageChange={onPageChange}
+      currentPage={currentPage}
+    /> 
+);
 }
 export default MakeupContainer;
