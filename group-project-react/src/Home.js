@@ -1,10 +1,17 @@
 import React from "react";
+import MakeUpList from "./MakeUpList";
+import RatingsCo from "./RatingsCo"
+
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to our Makeup Website</h1>
-      <p>This is the home page of our website.</p>
+    <div className="home-container">
+      <div className="left-content">
+        <MakeUpList itemsPerPage={5} /> {/* Display 5 makeup cards */}
+      </div>
+      <div className="right-content">
+        <RatingsCo /> {/* Display ratings on the right */}
+      </div>
     </div>
   );
 }

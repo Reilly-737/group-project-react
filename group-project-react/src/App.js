@@ -8,26 +8,23 @@ function App() {
 
   return (
     <div className="App">
-        <Navbar/>
-        <header className="App-header">
-        <img src="" className="" alt="" />
-        <p>FaceCake</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
-      </header>
       <Router>
+        <Navbar />
+        <header className="App-header">
+          <img src="" className="" alt="" />
+          <p>FaceCake</p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+        </header>
         <Switch>
-          <Route exact path="/" component={Home}/>
-          {/* <Route path="/products" component={Products}/>
-          <Route path="/brands" component={Brands}/>
-          <Route path="/reviews" component={Reviews}/> */}
+          <Route exact path="/" component={Home} />
         </Switch>
       </Router>
-      <MakeupContainer/>
+      <MakeupContainer />
     </div>
   );
 }
