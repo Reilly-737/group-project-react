@@ -5,28 +5,35 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 
 function App() {
-
   return (
     <div className="App">
       <Router>
         <Navbar />
-        <header className="App-header">
-          <img src="" className="" alt="" />
-          <p>FaceCake</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          ></a>
-        </header>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route path="/special">
+            <p>Special</p>
+          </Route>
+          {/*<Route exact path="/" component={Home} />*/}
+          <KeepCard />
         </Switch>
       </Router>
-      <MakeupContainer />
+      {/*<MakeupContainer />*/}
     </div>
   );
 }
 
 export default App;
+
+function KeepCard() {
+  return (
+    <>
+      <div className="left-content">
+        <MakeupContainer />
+      </div>
+
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+      </Switch>
+    </>
+  );
+}

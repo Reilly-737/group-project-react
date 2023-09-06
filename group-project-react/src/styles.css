@@ -25,7 +25,7 @@ header {
 
 /* Disable the "Back" button when not clickable */
 .pagination button:first-child:disabled {
-  background-color: #ccc; /* Grayed out color */
+  background-color: #f1caca; /* Grayed out color */
   cursor: not-allowed; /* Disable pointer cursor */
 }
 
@@ -58,4 +58,22 @@ header {
 }
 .nav li:hover {
   background-color: rgb(176, 241, 120);
+}
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgb(252, 198, 206); /* Background color */
+  padding: 20px;
+  border: 2px solid yellow; /* Border with yellow trim */
+}
+
+.right-content {
+  width: 30%;
+  /* Add any other styles you want for the text content here */
+}
+
+.left-content {
+  flex-basis: 55%; /* Adjust the width as needed */
+  padding: 1rem;
 }

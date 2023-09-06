@@ -5,20 +5,20 @@ function Navbar() {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-        FaceCake
+        FACE CAKE 💄💋
       </Link>
       <ul>
         <li>
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <Link to="/makeup">Makeup</Link>
         </li>
         <li>
           <Link to="/reviews">Reviews</Link>
         </li>
         <li>
-          <Link to="/brands">Brands</Link>
+          <Link to="/contactus">Contact Us</Link>
         </li>
       </ul>
     </nav>
