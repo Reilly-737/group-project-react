@@ -40,6 +40,7 @@ header {
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
+  
 }
 .nav ul {
   padding: 0;
@@ -76,4 +77,17 @@ header {
 .left-content {
   flex-basis: 55%; /* Adjust the width as needed */
   padding: 1rem;
+}
+.site-title {
+  font-size: 36px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the title bold */
+  display: inline-block; /* Allow centering horizontally */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+.nav {
+  text-align: center; /* Center align the content */
+}
+.home-container {
+  background: linear-gradient(to bottom, #FF69B4, #FFB6C1);
+  /* Replace colors withdesired gradient */
 }
