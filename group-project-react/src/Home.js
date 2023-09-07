@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="right-content">
-        <h2>Welcome to FaceCake!</h2>
+        <h2 style={{textAlign:'center'}}>Welcome to FaceCake!</h2>
         
         <p>
           Here you can discover amazing makeup reviews/ratings and products!

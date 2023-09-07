@@ -35,6 +35,7 @@ function KeepCard() {
       <div className="left-content">
         <MakeupContainer />
       </div>
+
     </>
   );
 }
