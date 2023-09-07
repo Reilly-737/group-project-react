@@ -4,6 +4,7 @@ import MakeupContainer from "./MakeupContainer";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import ContactUs from "./ContactUs";
+import Search from "./Search";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <p>Special</p>
           </Route>
           <Route path="/contact" component={ContactUs} />
+          <Route path="/makeup" component={Search} />
           {/*<Route exact path="/" component={Home} />*/}
           <KeepCard />
         </Switch>
