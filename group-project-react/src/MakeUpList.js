@@ -1,7 +1,14 @@
 import React from "react";
 import MakeUpCard from "./MakeUpCard";
 
-function MakeUpList({ makeups, loading, error, onPageChange, currentPage, itemsPerPage }) {
+function MakeUpList({
+  makeups,
+  loading,
+  error,
+  onPageChange,
+  currentPage,
+  itemsPerPage,
+}) {
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -24,15 +31,21 @@ function MakeUpList({ makeups, loading, error, onPageChange, currentPage, itemsP
   });
 
   return (
-    <div>
-      <ul className="cards">{makeupCards}</ul>
+    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+      {makeupCards}
       <div className="pagination">
         <button
           onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1} className="pagination">Back
+          disabled={currentPage === 1}
+          className="pagination"
+        >
+          Back
         </button>
         <button
-          onClick={() => onPageChange(currentPage + 1)}className="pagination">Forward
+          onClick={() => onPageChange(currentPage + 1)}
+          className="pagination"
+        >
+          Forward
         </button>
       </div>
     </div>
