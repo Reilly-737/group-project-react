@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 function SearchBar() {
+  const defaultImageUrl =
+    "https://img.freepik.com/premium-vector/8-bit-pixel-birthday-cake-food-item-game-assets-vector-illustration_614713-1063.jpg?w=826";
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const handleImageError = (event) => {
+    event.target.src = defaultImageUrl;
+  };
 
   useEffect(() => {
     // Define the fetch function
@@ -33,11 +38,11 @@ function SearchBar() {
         const data = await response.json();
 
         // Filter the data based on the search query
-      const filteredData = data.filter((item) =>
-        item.name.toLowerCase().includes(searchText.toLowerCase())
-      );
+        const filteredData = data.filter((item) =>
+          item.name.toLowerCase().includes(searchText.toLowerCase())
+        );
 
-      setSearchResults(filteredData);
+        setSearchResults(filteredData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -67,7 +72,18 @@ function SearchBar() {
           <li>Loading...</li>
         ) : (
           searchResults.map((result, index) => (
-            <li key={index}>{result.name}</li>
+            <li key={index}>
+              <div className="makeup">
+          
+                {result.name}
+                <img
+                  src={result.image_link}
+                  alt={result.name}
+                  onError={handleImageError}
+                />
+         
+              </div>
+            </li>
           ))
         )}
       </ul>
