@@ -1,25 +1,17 @@
 import React, { useState } from "react";
 
 function ReviewForm({ addReview, makeupID, image_link }) {
-  const [formData, setFormData] = useState({
-    makeupID: makeupID,
-    content: "",
-    image_link: image_link
-  });
+  const [content, setContent] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const handleChange = (e) => {
-    setFormData((formData) => {
-      return { ...formData, [e.target.name]: e.target.value };
-    });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addReview(formData);
+    addReview({ content, makeupID });
     // setFormData({
     //   makeupID: makeupID,
     //   content: "",
     // });
+    setContent("");
     setSubmitted(true);
   };
 
@@ -31,8 +23,8 @@ function ReviewForm({ addReview, makeupID, image_link }) {
     <form onSubmit={handleSubmit} className="review-form">
       <textarea
         name="content"
-        value={formData.content}
-        onChange={handleChange}
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
         placeholder="Whatchu likey huh?..."
         rows={10}
       />

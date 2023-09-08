@@ -3,7 +3,16 @@ import "./MakeUpCard.css";
 
 import ReviewForm from "./ReviewForm";
 
-function MakeUpCard({ image_link, name, brand, price, website, addReview, id,image, reviews }) {
+function MakeUpCard({
+  image_link,
+  name,
+  brand,
+  price,
+  website,
+  addReview,
+  id,
+  image,
+}) {
   const defaultImageUrl =
     "https://img.freepik.com/premium-vector/8-bit-pixel-birthday-cake-food-item-game-assets-vector-illustration_614713-1063.jpg?w=826";
   const handleImageError = (event) => {

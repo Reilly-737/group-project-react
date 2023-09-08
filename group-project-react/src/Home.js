@@ -1,15 +1,17 @@
 import React from "react";
 import "./Home.css";
-
-function Home() {
+import MakeupContainer from "./MakeupContainer";
+function Home({ makeups, loading, error, addReview }) {
   const paragraphStyle = {
     textAlign: "justify", // Justify text to cover the width
     width: "100%", // Make the width 100% of the parent container
   };
 
   return (
+    <>
     <div className="home-container">
       <div className="right-content">
+        
         <h2>Welcome to FaceCake!</h2>
 
         <p style={paragraphStyle}>
@@ -23,7 +25,7 @@ function Home() {
         </p>
 
         <p style={paragraphStyle}>
-          In our Share section, we encourage you to express your thoughts and
+          In our Reviews section, we encourage you to express your thoughts and
           feelings about the products and brands you adore. We genuinely value
           your opinions and can't wait to hear what you have to say!
         </p>
@@ -39,7 +41,20 @@ function Home() {
           being a part of our makeup community.
         </p>
       </div>
+     
     </div>
+    
+     <div className="right-content">
+     <MakeupContainer
+       loading={loading}
+       error={error}
+       makeups={makeups}
+       addReview={addReview}
+     />
+   </div>
+    
+    </>
+    
   );
 }
 
