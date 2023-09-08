@@ -36,7 +36,9 @@ return (
     error={error} 
     onPageChange={onPageChange}
     currentPage={currentPage}
+   
     />
+    
 )
 }
 export default MakeupContainer;
