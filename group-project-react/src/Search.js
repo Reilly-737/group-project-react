@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Search.css";
-import MakeUpCard from "./MakeUpCard"
+import MakeUpCard from "./MakeUpCard";
 
 function Search() {
   const defaultImageUrl =
@@ -75,14 +75,18 @@ function Search() {
         className="search-input"
       />
       <button className="searchButton" onClick={handleSearchClick}>
-        🔍 
+        🔍
       </button>
-      <ul id="results">
+      {/* <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}></div> */}
+      <ul
+        id="results"
+        style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
+      >
         {loading ? (
           <li>Loading...</li>
         ) : (
           searchResults.map((result, index) => (
-                <li key={index}>
+            <li key={index}>
               <MakeUpCard
                 name={result.name}
                 image_link={result.image_link}
