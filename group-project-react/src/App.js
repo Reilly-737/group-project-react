@@ -18,7 +18,7 @@ function App() {
           </Route>
           <Route path="/contact" component={ContactUs} />
           <Route path="/makeup" component={Search} />
-          {/*<Route exact path="/" component={Home} />*/}
+      
           <KeepCard />
         </Switch>
       </Router>
