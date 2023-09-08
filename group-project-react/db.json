@@ -1,4 +1,14 @@
 {
   "reviews": [
+    {
+      "makeupID": 1048,
+      "content": "sdfdsfsdfsdf",
+      "id": 1
+    },
+    {
+      "makeupID": 1046,
+      "content": "I love this product",
+      "id": 2
+    }
   ]
 }

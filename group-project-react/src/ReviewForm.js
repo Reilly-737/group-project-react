@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function ReviewForm({ addReview }) {
+function ReviewForm({ addReview, makeupID }) {
   const [formData, setFormData] = useState({
-    Product: "",
-    Brand: "",
+    makeupID: makeupID,
     content: "",
   });
+  const [submitted, setSubmitted] = useState(false);
   const handleChange = (e) => {
     setFormData((formData) => {
       return { ...formData, [e.target.name]: e.target.value };
@@ -15,36 +15,29 @@ function ReviewForm({ addReview }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     addReview(formData);
-    setFormData({
-      Product: "",
-      Brand: "",
-      content: "",
-    });
-
-    return (
-      <form onSubmit={handleSubmit} className="review-form">
-        <input
-          value={formData.title}
-          onChange={handleChange}
-          name="Product"
-          placeholder="Product name"
-        />
-        <input
-          value={formData.author}
-          onChange={handleChange}
-          name="Brand"
-          placeholder="Brand Name"
-        />
-        <textarea
-          name="content"
-          value={formData.content}
-          onChange={handleChange}
-          placeholder="Whatchu likey huh?..."
-          rows={10}
-        />
-        <input type="submit" value="Aight Fam I SEE YOU" />
-      </form>
-    );
+    // setFormData({
+    //   makeupID: makeupID,
+    //   content: "",
+    // });
+    setSubmitted(true);
   };
+
+  if (submitted) {
+    return <p>Review submitted!</p>;
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="review-form">
+      <textarea
+        name="content"
+        value={formData.content}
+        onChange={handleChange}
+        placeholder="Whatchu likey huh?..."
+        rows={10}
+      />
+      <input type="submit" value="Aight Fam I SEE YOU" />
+    </form>
+  );
 }
+
 export default ReviewForm;

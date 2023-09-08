@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import MakeUpList from "./MakeUpList";
 
-function MakeupContainer() {
+function MakeupContainer({addReview}) {
   const [makeups, setMakeups] = useState([]); //will hold makeup data fetched from API
   const [loading, setLoading] = useState(true); //indicates whether data is currently being fetched (true) or not (false).
   const [error, setError] = useState(null); //holds any error information if an error occurs during fetching
@@ -36,6 +36,7 @@ function MakeupContainer() {
       error={error}
       onPageChange={onPageChange}
       currentPage={currentPage}
+      addReview={addReview}
     />
   );
 }

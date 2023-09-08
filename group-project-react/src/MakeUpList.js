@@ -8,6 +8,7 @@ function MakeUpList({
   onPageChange,
   currentPage,
   itemsPerPage,
+  addReview
 }) {
   if (loading) {
     return <div>Loading...</div>;
@@ -20,12 +21,14 @@ function MakeUpList({
     return (
       <MakeUpCard
         key={makeup.id}
+        id={makeup.id}
         name={makeup.name}
         image_link={makeup.image_link}
         brand={makeup.brand}
         price={makeup.price}
         website={makeup.product_link}
         rating={makeup.rating}
+        addReview={addReview}
       />
     );
   });
