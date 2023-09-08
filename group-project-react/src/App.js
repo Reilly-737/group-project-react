@@ -7,6 +7,7 @@ import ContactUs from "./ContactUs";
 import Search from "./Search";
 
 function App() {
+ 
   return (
     <div className="App">
       <Router>
@@ -35,7 +36,7 @@ function KeepCard() {
         <Route exact path="/" component={Home}></Route>
       </Switch>
       <div className="left-content">
-        <MakeupContainer />
+        <MakeupContainer  />
       </div>
     </>
   );

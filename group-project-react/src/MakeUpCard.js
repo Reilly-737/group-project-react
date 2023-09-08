@@ -9,6 +9,7 @@ const defaultImageUrl = "https://img.freepik.com/premium-vector/8-bit-pixel-birt
  }
 
   return (
+    
     <div className="makeup">
       <h2>{name}</h2>
       <img src={image_link} alt={name} onError={handleImageError} />
