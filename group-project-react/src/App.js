@@ -7,6 +7,21 @@ import ContactUs from "./ContactUs";
 import Search from "./Search";
 
 function App() {
+
+  const [reviews, setReviews] = useState([]);
+  const addReview = (review) => {
+    fetch("http://localhost:3001", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(review),
+    })
+      .then((r) => r.json())
+      .then((review) => {
+        setReviews((reviews) => [...reviews, review]);
+      });
+  };
+
+
  
   return (
     <div className="App">
@@ -15,6 +30,7 @@ function App() {
         <Switch>
           <Route path="/special">
             <p>Special</p>
+           
           </Route>
           <Route path="/contact" component={ContactUs} />
           <Route path="/makeup" component={Search} />

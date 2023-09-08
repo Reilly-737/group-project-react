@@ -1,6 +1,7 @@
 import React from "react";
 import "./MakeUpCard.css";
-import RatingsForm from "./RatingsForm";
+
+import ReviewForm from "./ReviewForm";
 
 function MakeUpCard({ image_link, name, brand, price, rating, website }) {
 const defaultImageUrl = "https://img.freepik.com/premium-vector/8-bit-pixel-birthday-cake-food-item-game-assets-vector-illustration_614713-1063.jpg?w=826"
@@ -19,7 +20,8 @@ const defaultImageUrl = "https://img.freepik.com/premium-vector/8-bit-pixel-birt
         Product link
       </a>
       <p>Rating: {rating} </p>
-      <RatingsForm/>
+      <ReviewForm/>
+      
     </div>
   );
 }
