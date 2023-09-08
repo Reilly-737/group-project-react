@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-function ReviewForm({ addReview, makeupID }) {
+function ReviewForm({ addReview, makeupID, image_link }) {
   const [formData, setFormData] = useState({
     makeupID: makeupID,
     content: "",
+    image_link: image_link
   });
   const [submitted, setSubmitted] = useState(false);
   const handleChange = (e) => {

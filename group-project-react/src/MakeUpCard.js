@@ -3,7 +3,7 @@ import "./MakeUpCard.css";
 
 import ReviewForm from "./ReviewForm";
 
-function MakeUpCard({ image_link, name, brand, price, rating, website, addReview, id }) {
+function MakeUpCard({ image_link, name, brand, price, website, addReview, id,image, reviews }) {
   const defaultImageUrl =
     "https://img.freepik.com/premium-vector/8-bit-pixel-birthday-cake-food-item-game-assets-vector-illustration_614713-1063.jpg?w=826";
   const handleImageError = (event) => {
@@ -20,7 +20,7 @@ function MakeUpCard({ image_link, name, brand, price, rating, website, addReview
         Product link
       </a>
 
-      <ReviewForm addReview={addReview} makeupID={id} />
+      <ReviewForm addReview={addReview} makeupID={id} image_link={image} />
     </div>
   );
 }

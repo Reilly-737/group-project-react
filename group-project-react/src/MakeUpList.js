@@ -21,6 +21,7 @@ function MakeUpList({
     return (
       <MakeUpCard
         key={makeup.id}
+        image={makeup.image_link}
         id={makeup.id}
         name={makeup.name}
         image_link={makeup.image_link}

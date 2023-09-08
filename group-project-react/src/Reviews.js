@@ -1,85 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function ReviewForm({ makeupProducts, onSubmitReview }) {
-  const [rating, setRating] = useState("");
-  const [comment, setComment] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState("");
+function Reviews() {
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Validate form fields and submit the review via POST request
-    const reviewData = {
-      rating,
-      comment,
-      makeupProductId: selectedProduct,
+    const defaultImageUrl =
+      "https://img.freepik.com/premium-vector/8-bit-pixel-birthday-cake-food-item-game-assets-vector-illustration_614713-1063.jpg?w=826";
+    const handleImageError = (event) => {
+      event.target.src = defaultImageUrl;
     };
+  const [reviews, setReviews] = useState([]);
 
-    try {
-      // Make a POST request to your server to save the review
-      const response = await fetch("/api/reviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reviewData),
-      });
-
-      if (response.status === 201) {
-        // Review successfully posted
-        await onSubmitReview(reviewData); // You can optionally update the UI with the new review
-      } else {
-        // Handle error cases here
-        console.error("Failed to post review:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error posting review:", error);
-    }
-
-    // Clear form fields after submission
-    setRating("");
-    setComment("");
-    setSelectedProduct("");
-  };
+  useEffect(() => {
+    fetch("http://localhost:3001/reviews")
+      .then((r) => r.json())
+      .then((review) => setReviews(review));
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Rating:
-        <input
-          type="number"
-          min="1"
-          max="5"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        />
-      </label>
-
-      <label>
-        Comment:
-        <textarea
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-      </label>
-
-      <label>
-        Makeup Product:
-        <select
-          value={selectedProduct}
-          onChange={(e) => setSelectedProduct(e.target.value)}
-        >
-          <option value="">Select a makeup product</option>
-          {makeupProducts.map((product) => (
-            <option key={product.id} value={product.id}>
-              {product.name}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <button type="submit">Submit Review</button>
-    </form>
+    <div>
+      <h2 className="makeup">Reviews</h2>
+      <ul
+        className="makeup"
+        style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
+      >
+        
+        {reviews.map((review) => (
+          <li key={review.id}>
+            <img
+              src={review.image_link}
+              alt={`Review ${review.id}`}
+              onError={handleImageError}
+            />
+            {review.content}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-export default ReviewForm;
+export default Reviews;

@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import ContactUs from "./ContactUs";
 import Search from "./Search";
+import Reviews from "./Reviews";
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -29,11 +30,12 @@ function App() {
             <p>Special</p>
           </Route>
           <Route path="/contact" component={ContactUs} />
-          <Route path="/makeup/:id">{/* <Makeup reviews={reviews}/> */}</Route>
+          {/* <Route path="/makeup/:id">component={Reviews}</Route> */}
           <Route path="/makeup" component={Search} />
 
-          <KeepCard addReview={addReview} />
+          <Route path="/reviews" component={Reviews} />
         </Switch>
+        <KeepCard addReview={addReview} />
       </Router>
       {/*<MakeupContainer />*/}
     </div>
